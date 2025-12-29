@@ -10,7 +10,6 @@ int main()
     unordered_map<string, string> db;
     string command;
     string key, value;
-    string report;
     // DB part
 
     while (cin >> command)
