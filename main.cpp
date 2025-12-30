@@ -19,7 +19,7 @@ int main()
         if (command == "INSERT")
         {
             cin >> key >> value;
-            db[key] = value;
+            db_ordered[key] = value;
         }
         else if (command == "GET")
         {
@@ -38,7 +38,7 @@ int main()
             cin >> key >> value;
             if (db.find(key) != db.end())
             {
-                db[key] = value;
+                db_ordered[key] = value;
             }
             else
             {
@@ -50,13 +50,26 @@ int main()
             cin >> key;
             if (db.find(key) != db.end())
             {
-                db.erase(key);
+                db_ordered.erase(key);
             }
             else
             {
                 cout << "Key Not Found" << endl;
             }
         }
+        else if (command == "RANGE")
+        {
+            string start, end;
+            cin >> start >> end;
+
+            auto it = db_ordered.lower_bound(start);
+            while (it != db_ordered.end() && it->first <= end)
+            {
+                cout << it->first << " " << it->second << endl;
+                ++it;
+            }
+        }
+
         else if (command == "EXIT")
         {
             return 0;
