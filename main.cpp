@@ -19,6 +19,7 @@ int main()
         if (command == "INSERT")
         {
             cin >> key >> value;
+            db[key] = value;
             db_ordered[key] = value;
         }
         else if (command == "GET")
