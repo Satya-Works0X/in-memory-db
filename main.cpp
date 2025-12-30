@@ -50,6 +50,7 @@ int main()
             cin >> key;
             if (db.find(key) != db.end())
             {
+                db.erase(key);
                 db_ordered.erase(key);
             }
             else
