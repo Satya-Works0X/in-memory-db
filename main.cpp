@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unordered_map>
+#include <map>
 using namespace std;
 
 int main()
@@ -8,6 +9,7 @@ int main()
     // DB= HashMap<Key, Value>
 
     unordered_map<string, string> db;
+    map<string, string> db_ordered; // For ordered operations if needed
     string command;
     string key, value;
     // DB part
