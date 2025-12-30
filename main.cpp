@@ -38,6 +38,7 @@ int main()
             cin >> key >> value;
             if (db.find(key) != db.end())
             {
+                db[key] = value;
                 db_ordered[key] = value;
             }
             else
